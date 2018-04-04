@@ -1,9 +1,7 @@
 package com.bjartelarsen.lab30;
 
 import android.content.Context;
-import android.media.AudioManager;
 import android.media.MediaPlayer;
-import android.media.SoundPool;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -15,7 +13,6 @@ public class Sound {
 
     public Sound(Context context) {
         this.context = context;
-
     }
 
     public void registerSound(int rid) {

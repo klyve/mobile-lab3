@@ -1,10 +1,8 @@
 package com.bjartelarsen.lab30;
 
 import android.content.Context;
-import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.hardware.SensorManager;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -27,8 +25,6 @@ public class Canvas extends SurfaceView implements Runnable {
 
     @Nullable
     SurfaceHolder surface = null;
-
-    Bitmap backGround           = null;
 
     Thread thread = null;
 
@@ -55,6 +51,7 @@ public class Canvas extends SurfaceView implements Runnable {
 
         init(null, context);
     }
+
 
     public Canvas(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
@@ -103,8 +100,6 @@ public class Canvas extends SurfaceView implements Runnable {
         }
         thread = null;
     }
-
-
 
 
     @Override

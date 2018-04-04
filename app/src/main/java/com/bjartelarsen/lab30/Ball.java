@@ -6,6 +6,7 @@ import android.animation.ValueAnimator;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.media.MediaPlayer;
 import android.support.annotation.Nullable;
 import android.util.Log;
 
@@ -115,6 +116,7 @@ public class Ball extends Entity {
 
             if(this.collideCallback != null)
                 collideCallback.onCollide(this);
+
         }
         this.posX = nextPosX;
         this.posY = nextPosY;
@@ -124,7 +126,7 @@ public class Ball extends Entity {
     private void drawBall() {
         int paintcolor = this.paint.getColor();
         if(paintcolor != this.basecolor) {
-            this.paint.setColor(lerp(paintcolor, basecolor, 0.7f));
+            this.paint.setColor(lerp(paintcolor, basecolor, 0.1f));
         }
         this.canvas.drawCircle(this.posX, this.posY, radius, paint);
     }

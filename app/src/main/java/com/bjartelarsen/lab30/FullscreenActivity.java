@@ -28,12 +28,18 @@ public class FullscreenActivity extends AppCompatActivity {
     Canvas view;
 
     private Vibrator v;
+    private Sound s;
 
+    private MediaPlayer mp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         view = new Canvas(this);
+      //  s = new Sound(this);
+    //    s.registerSound(MediaPlayer.create(this, R.raw.ding));
+        mp = MediaPlayer.create(this, R.raw.ding);
+
         startSensorManagement();
         this.v = (Vibrator) this.getSystemService(VIBRATOR_SERVICE);
 
@@ -50,8 +56,6 @@ public class FullscreenActivity extends AppCompatActivity {
                         entities.addEntity(addBall(x, y));
                     } break;
                 }
-
-
             }
         });
 
@@ -60,6 +64,10 @@ public class FullscreenActivity extends AppCompatActivity {
 
     private void onBallHit(Ball ball) {
         this.v.vibrate(50);
+        //this.s.playRandom();
+        this.mp.start();
+        this.mp.seekTo(10);
+
     }
 
     protected Ball addBall(int x, int y) {
